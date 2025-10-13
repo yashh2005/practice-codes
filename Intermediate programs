@@ -1,0 +1,476 @@
+UPPER CASE CHARACTER OR LOWER CASE
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    char a;
+    cout << "Enter value of a:" << endl;
+    cin >> a;
+
+    if (47 < a < 58){
+        cout << "A is numeric" << endl;
+    }
+    if (64 < a < 91){
+        cout << "A is upper case" << endl;
+    }
+    if (96 < a < 123){
+        cout << "A is lower case" << endl;
+    }
+}
+
+------------------------------------------------------------------------
+
+SUM OF GIVEN EVEN NUMBERS
+
+#include <iostream>
+#include <stdio.h>
+using namespace std;
+
+int main(){
+    int n;
+    printf("HEllO\n");
+    cout << "Enter number:" << endl;
+    scanf("%d",&n);
+    int i = 2;
+    int sum = 0;
+
+    while(i <= n){
+        sum = sum + i;
+        i = i + 2;
+    }
+    cout << "The value of all even numbers is " << sum << endl;
+}
+
+------------------------------------------------------------------------
+
+NOT A PRIME NUMBER
+
+#include <iostream>
+using namespace std;
+
+int main(){
+
+    int n;
+    cout << "Enter number:" << endl;
+    cin >> n;
+
+    int i = 2;
+
+    while(i<n){
+
+        if(n%i==0){
+            cout << "Not prime" << endl;
+        }
+        i = i + 1;
+    }
+}
+
+------------------------------------------------------------------------
+
+STAR PATTERN LEFT PYRAMID
+
+#include <iostream>
+using namespace std;
+
+int main(){
+
+    int n;
+    cin >> n;
+    int i = 1;
+
+    while(i<=n){
+        int j = 1;
+        while(j<=i){
+            cout << "* ";
+            j = j + 1;
+        }
+        cout << endl;
+        i = i + 1;
+    }
+}
+
+------------------------------------------------------------------------
+
+STAR PATTERN NUMBER SQUARE
+
+#include <iostream>
+using namespace std;
+
+int main(){
+
+    int n;
+    cin >> n;
+    int i = 1;
+
+    while(i<=n){
+        int j = 1;
+        while(j<=n){
+            cout << i;
+            j = j + 1;
+        }
+        cout << endl;
+        i = i + 1;
+    }
+}
+
+------------------------------------------------------------------------
+
+STAR PATTERN NUMBER PYRAMID LEFT
+
+#include <iostream>
+using namespace std;
+
+int main(){
+
+    int n;
+    cin >> n;
+    int i = 1;
+
+    while(i<=n){
+        int j = 1;
+        while(j<=i){
+            cout << j;
+            j = j + 1;
+        }
+        cout << endl;
+        i = i + 1;
+    }
+}
+
+------------------------------------------------------------------------
+
+LEFT PYRAMID COUNTING NUMBER
+
+#include <iostream>
+using namespace std;
+
+int main(){
+
+    int n;
+    cin >> n;
+    int i = 1;
+    int count = 1;
+
+    while(i<=n){
+        int j = 1;
+        while(j<=i){
+            cout << count << " ";
+            count++;
+            j++;
+        }
+        cout << endl;
+        i++;
+    }
+}
+
+------------------------------------------------------------------------
+
+LEFT PATTERN ALPHABET
+
+#include <iostream>
+using namespace std;
+int main(){
+    int n;
+    cin >> n;
+    int i = 1;
+    while(i<=n){
+        int j = 1;
+        while(j <= i){
+            char chara = 'A'+i-1;
+            cout << chara;
+            j++;
+        }
+        cout << endl;
+        i++;
+    }
+}
+
+-------------------------------------------------------------------------
+
+RIGHT INVERTED PYRAMID
+
+#include <iostream>
+using namespace std;
+int main(){
+    int n;
+    cin >> n;
+    int row = 1;
+    while (row <= n){
+        int space = n - row;
+        while(space){
+            cout << " ";
+            space = space - 1;
+        }
+        int col = 1;
+        while(col <= row){
+            cout<<"*";
+            col++;
+        }
+        cout << endl;
+        row++;
+    }
+}
+
+------------------------------------------------------------------------
+
+FIRST OCCURENCE OF AN ELEMENT
+
+#include <iostream>
+using namespace std;
+
+int firstoccur (int arr[],int n,int key){
+    int s = 0, e = n-1;
+    int mid = s + (e-s)/2;
+    int ans = -1;
+
+    while(s<=e){
+        if(arr[mid] == key){
+            ans = mid;
+            e = mid - 1;
+        }
+        else if(key > arr[mid]){
+            s = mid + 1;
+        }
+        else if(key < arr[mid]){
+            e = mid - 1;
+        }
+        mid = s + (e-s)/2;
+    }
+    return ans;
+}
+
+int lastoccur (int arr[],int n,int key){
+    int s = 0, e = n-1;
+    int mid = s + (e-s)/2;
+    int ans1 = -1;
+
+    while(s<=e){
+        if(arr[mid] == key){
+            ans1 = mid;
+            s = mid - 1;
+        }
+        else if(key > arr[mid]){
+            s = mid + 1;
+        }
+        else if(key < arr[mid]){
+            e = mid - 1;
+        }
+        mid = s + (e-s)/2;
+    }
+    return ans1;
+}
+
+int main(){
+
+    int even[13] = {1,2,3,3,5,3,7,4,5,3,2,3,5};
+    cout << "First occurance of 3 is at index " << firstoccur(even, 13,3) << endl;
+    cout << "Last occurance of 3 is at index " << lastoccur(even, 13,3) << endl;
+    return 0;
+
+}
+
+------------------------------------------------------------------------
+
+SWAP VARIABLE FUNCTION
+
+//SWAP VARIABLE FUNCTION
+
+#include <iostream>
+using namespace std;
+
+void printarr(int arr[],int n){
+    for(int i=0; i<n; i++){
+        cout << arr[i] << " ";
+    }cout << endl;
+}
+
+void swapvari(int arr[],int size){
+    for(int i=0; i<size; i+=2){
+        if(i+1<size){
+            swap(arr[i], arr[i+1]);
+        }
+    }
+}
+
+int main(){
+    int even[6] = {56,86,2,5,6,65};
+    int odd[3] = {2,67,3};
+    swapvari(even,6);
+    printarr(even,6);
+
+    swapvari(odd,3);
+    printarr(odd,3);
+
+    return 0;
+}
+
+------------------------------------------------------------------------
+
+// LINEAR SEARCH
+
+#include <iostream>
+using namespace std;
+
+bool search(int hii[],int size, int key){
+
+}
+
+int main(){
+    int hii[10];
+    for(int i=0;i<=9;i++){
+        cin >> hii[i];
+    }
+    // whether 1 is present in it or not?
+    cout << "Enter the key" << endl;
+    cin >> int key;
+
+    bool found = search(hii,10,key);
+    if( found ){
+        cout << "key is present";
+    }
+    else{
+        cout << "key is absent";
+    }
+
+    return 0;
+}
+
+------------------------------------------------------------------------
+
+// CURRENCY FINDER.
+
+#include <iostream>
+using namespace std;
+
+void currency();
+int main(){
+    int a,b,c,d,e,f,g,h,i;
+    cout << "Enter amount: " << endl;
+    cin >> a;
+    b=1;
+    switch (b){
+        case 1:
+        c = a/100;
+        if(c != 0){
+            cout << "100 rs notes you need:" << c << endl; 
+        }
+        else{
+            cout << "100 rs notes you need:" << c << endl;
+        }
+        d = a - c*100;
+
+        case 2:
+        e = d/50;
+        if(e != 0){
+            cout << "50 rs notes you need:" << e << endl;
+        }
+        else{
+            cout << "50 rs notes you need:" << e << endl;
+        }
+        f = d - e*50;
+
+        case 3:
+        g = f/20;
+        if(e != 0){
+            cout << "20 rs notes you need:" << g << endl;
+        }
+        else{
+            cout << "20 rs notes you need:" << g << endl;
+        }
+        h = f - g*20;
+
+        case 4:
+        i = h/1;
+        cout << "1 rs coins you need:" << i << endl;
+
+        break;
+    }
+    return 0;
+
+}
+
+------------------------------------------------------------------------
+
+// CURRENCY FINDER THROUGH FUNCTION
+
+#include <stdio.h>
+
+void currency();
+int main(){
+    currency();
+    return 0;
+}
+
+void currency(){
+    int a,b,c,d,e,f,g,h,i;
+    printf("Enter amount:");
+    scanf("%d",&a);
+    b=1;
+    switch (b){
+        case 1:
+        c = a/100;
+        if(c != 0){
+            printf("100 rs notes you need: %d\n",c);
+        }
+        else{
+            printf("100 rs notes you need: %d \n",c);
+        }
+        d = a - c*100;
+
+        case 2:
+        e = d/50;
+        if(e != 0){
+            printf("50 rs notes you need: %d \n",e);
+        }
+        else{
+            printf("50 rs notes you need: %d \n",e);
+        }
+        f = d - e*50;
+
+        case 3:
+        g = f/20;
+        if(e != 0){
+            printf("20 rs notes you need: %d \n",g);
+        }
+        else{
+            printf("20 rs notes you need: %d \n",g);
+        }
+        h = f - g*20;
+
+        case 4:
+        i = h/1;
+        printf("1 rs notes you need: %d \n",i);
+
+        break;
+    }
+}
+
+------------------------------------------------------------------------
+
+FIND PIVOT POINT
+
+#include <iostream>
+using namespace std;
+
+int getpivot(int arr[], int n){
+    int s = 0;
+    int e = n -1;
+    int mid = s +(e-s)/2;
+
+    while(s<e){
+        if(arr[mid] >= arr[0]){
+            s = mid + 1;
+        }
+        else{
+            e = mid;
+        }
+        mid = s + (e-s)/2;
+    }
+    return s;
+}
+
+int main(){
+    int arr[5] = {8,10,17,1,3};
+    cout << "Pivot is:" << getpivot(arr,5) << endl;
+}

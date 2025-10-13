@@ -1,0 +1,178 @@
+#include <stdio.h>
+
+int main()
+{
+    printf("Let's learn about pointers\n");
+    int a = 76;
+    int *ptr1 = &a;
+    int *ptr2 = NULL;
+    printf("The address of pointer to a is %x\n",&ptr1);
+    printf("The address of some garbage is %x\n",ptr2);
+    printf("The value of a is %d\n",*ptr1);
+    return 0;
+}
+
+----------------------------------------------------------------------
+
+ARITHMATIC POINTERS (int)
+
+#include <stdio.h>
+
+int main()
+{
+    int a = 34;
+    int *ptra = &a;
+    printf("%d\n",ptra);
+    printf("%d",ptra+2);
+    return 0;
+}
+
+-----------------------------------------------------------------------
+
+ARITHMATIC POINTERS (char)
+
+
+#include <stdio.h>
+
+int main()
+{
+    char a = '4';
+    char *ptra = &a;
+    printf("%d\n",ptra);
+    printf("%d",ptra-2);
+    return 0;
+}
+
+-----------------------------------------------------------------------
+
+#include <stdio.h>
+
+int main()
+{
+    int arr[] = {1,2,3,4,5,6,7};
+    printf("value at position 4 of the array is %d\n", arr[4]);
+    printf("The address of the first element of the arry is %d\n", &arr[0]);
+    printf("The address of the first element of the arry is %d\n", arr);
+    printf("The address of the second element of the arry is %d\n", &arr[1]);
+    printf("The address of the second element of the arry is %d\n", arr + 1);
+    return 0;
+}
+
+-----------------------------------------------------------------------
+
+Call by value and reference
+
+#include <stdio.h>
+void swap(int *x, int *y){
+
+int temp;
+temp = *x; 
+*x = *y;
+*y = temp;
+return;
+}
+int main() 
+{
+int a = 34 , b= 74;
+printf("%d and %d\n",a,b);
+swap(&a,&b);  
+printf("%d and %d\n",a,b);
+return 0;
+}
+
+------------------------------------------------------------------------
+
+CHANGE VALUE FUNCTION
+
+#include <stdio.h>
+
+void changeValue(int* address)
+{
+    *address = 345;
+}
+int main()
+{
+    int a = 34,b= 56;
+    printf("Previouesly the value of A %d\n",a);
+    changeValue(&a);
+    printf("The value of A now is %d\n",a);
+    return 0;
+}
+
+OUTPUT 
+
+Previously the value of A 34
+The value of A now is 345
+
+------------------------------------------------------------------------
+
+Passing Array as function arguments
+
+#include <stdio.h>
+int func1(int array[]){
+    for (int i = 0;i < 4; i++){
+        printf("The value at %d is %d\n",i,array[i]);
+    }
+    array[0] = 123;//Very important point that if you change any value here, it hgets reflected in main() program
+    return 0;
+}
+int main() {
+    int arr[] = {1,2,3,4};
+    printf("The value at index 0 is %d\n",arr[0]);
+    func1(arr);
+    printf("The value at index 0 is %d\n",arr[0]);
+    return 0;
+}
+
+-----------------------------------------------------------------------
+
+STAR PATTERN
+
+
+#include <stdio.h>
+
+void starpattern(int rows)
+{
+    for(i = 0;i < rows; i++)
+    {
+        for(j = 0;j <= i;j++)
+        {
+            printf("*");
+        }
+        printf("\n");
+    }
+}
+
+void reversestarpattern(int rows)
+{
+    for(i = 0;i < rows; i++)
+    {
+        for(j = 0;j <= rows-i-1;j++)
+        {
+            printf("*");
+        }
+        printf("\n");
+    }
+}
+
+int main()
+{
+    int rows,type;
+    printf("What do you want?\n1 for starpattern\n2 for reversestarpattern\n=>");
+    scanf("%d",&type);
+    printf("How many rows you want?\n=>");
+    scanf("%d",&rows);
+    switch (type)
+    {
+    case 1:
+        starpattern(rows)
+        break;
+    case 2:
+        reversestarpattern(rows)
+        break;
+    default:
+        printf("you have entered invalid choice");
+        break;
+    }
+    return 0;
+}

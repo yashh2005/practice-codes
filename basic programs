@@ -1,0 +1,569 @@
+AREA OF A SQUARE
+
+#include <stdio.h>
+// Area of the square
+int main() {
+    
+    int a;
+    printf("Enter a:");
+    scanf("%d",&a);
+    int sq = a*a;
+    printf("The area of the square is:%d",sq);
+
+    return 0;
+}
+
+----------------------------------------------------------------------
+
+AREA OF CIRCLE
+
+#include <stdio.h>
+
+int main() {
+    float r;
+    printf("Enter radius of the circle:");
+    scanf("%f",&r);
+    printf("The area of the circle is:%f",3.14*r*r);
+
+    return 0;
+}
+
+
+-----------------------------------------------------------------------
+
+TO CHECK IF A NUMBER IS DIVISIBLE BY 2
+
+#include <stdio.h>
+
+int main() {
+    int a;
+    printf("I will check if a number is divisible or not\n");
+    printf("Enter your number:");
+    scanf("%d",&a);
+    if (a%2 == 0){
+        printf("This number is divisible by 2");
+    }
+    else if (a%2 != 0){
+        printf("This number is not divisible by 2");
+    }
+    return 0;
+}
+
+-----------------------------------------------------------------------
+
+TO CHECK THE AVERAGE OF THREE NUMBERS
+
+#include <stdio.h>
+
+int main() {
+    int a,b,c;
+    printf("Enter three numbers:\n");
+    scanf("%d",&a);
+    scanf("%d",&b);
+    scanf("%d",&c);
+    printf("The average of the numbers is %d",(a+b+c)/3);
+    return 0;
+}
+
+
+----------------------------------------------------------------------
+
+RANKING SYSTEM
+
+#include <stdio.h>
+int main(){
+    int marks;
+    printf("Enter your marrks:");
+    scanf("%d",&marks);
+    if(marks <= 30){
+        printf("C rank");
+    } else if (marks > 30 && marks < 70){
+        printf("B rank");
+    } else if (marks > 70 && marks < 90){
+        printf("A rank");
+    } else if (marks > 90 && marks <=100){
+        printf("A+ rank");
+    } else {
+        printf("Invalid marks");
+    }
+    return 0;
+}
+
+----------------------------------------------------------------------
+
+CHARACTER INDENTIFIER
+
+#include <stdio.h>
+int main(){
+    char ch;
+    printf("Enter a character:");
+    scanf("%c",&ch);
+    if (ch >= 'A' && ch <= 'Z'){
+        printf("UPPER CASE");
+    } else if (ch >= 'a' && ch <= 'z'){
+        printf("LOWER CASE");
+    } else{
+        printf("invalid character");
+    }
+    return 0;
+}
+
+------------------------------------------------------------------------
+
+SUM OF (N) NATURAL NUMBERS
+
+#include <stdio.h>
+int main(){
+    int a;
+    printf("Enter a number:");
+    scanf("%d",&a);
+    int sum =0;
+    for (int i = 1; i<=a ; i++){
+        sum=sum+i;
+    }
+    printf("%d \n",sum);
+    return 0;
+}
+
+------------------------------------------------------------------------
+
+TABLE OF ANY NUMBER YOU WANT
+
+#include <stdio.h>
+int main(){
+    int a;
+    printf("Enter a number:");
+    scanf("%d",&a);
+    int mul = 1;
+    for (int i = 1;i <=10;i++){
+        mul = a * i;
+        printf("%d X %d = %d\n",a,i,mul);
+    }
+    return 0;
+}
+
+------------------------------------------------------------------------
+
+KEEPS TAKING INPUT UNTIL ODD NUMBER IS INPUT
+
+#include <stdio.h>
+int main(){
+    for(int i=0; ; i++){
+        int a;
+        printf("Enter number:");
+        scanf("%d",&a);
+        if(a % 2 != 0){
+            break;
+        }
+    }
+    printf("EnD");
+    return 0;
+}
+
+------------------------------------------------------------------------
+
+FACTORIAL OF ANY NUMBER
+
+#include <stdio.h>
+
+int main() {
+    int a;
+    printf("Enter number you want the factorial of:");
+    scanf("%d",&a);
+    int mul = 1;
+    for (int i = a; i >= 1;i--){
+        mul = mul * i;
+    }
+    printf("%d",mul);
+    return 0;
+}
+
+2nd APPROACH
+
+#include <stdio.h>
+int main()
+{
+    int a,b,fact=1;
+    printf("Enter a number you want factorial of:");
+    scanf("%d",&a);
+    for(int i = 1;i<=a;i++){
+        fact = fact * i;
+    }
+    printf("Factorial = %d",fact);
+    return 0;
+}
+
+------------------------------------------------------------------------
+
+REVERSE TABLE
+
+#include <stdio.h>
+
+int main() {
+    int a;
+    printf("Enter number you want the table of:");
+    scanf("%d",&a);
+    for (int i = 10; i >= 1;i--){
+        int mul = a * i;
+        printf("%d X %d = %d\n",a,i,mul);
+    }
+    
+    return 0;
+}
+
+------------------------------------------------------------------------
+
+SUM OF NUMBERS BETWEEN 5 AND 50
+
+#include <stdio.h>
+
+int main() {
+    int sum = 0;
+    for(int i = 5;i <= 50; i++){
+        sum = sum + i;
+    }
+    printf("%d",sum);
+    
+    return 0;
+}
+
+------------------------------------------------------------------------
+
+DIRECT CALLING OF OTHER FUNCTION BY MAIN FUNCTION
+
+#include <stdio.h>
+
+void printnamaste();
+void printbonjour();
+
+int main(){
+    char a;
+    printf("Enter your nationality.\n i for indian \n f for french\n:");
+    scanf("%c",&a);
+    if(a == 'i'){
+        printnamaste();
+    }
+    else if(a == 'f'){
+        printbonjour();
+    }
+    else{
+        printf("INVALID");
+    }
+    return 0;
+}
+
+void printnamaste() {
+    printf("Namaste!\n");
+}
+
+void printbonjour() {
+    printf("bonjour\n");
+}
+
+------------------------------------------------------------------------
+
+CALCULATING FACTORIAL USING RECURSIVE FUNCTION
+
+#include <stdio.h>
+
+int fact(int n);
+
+int main() {
+    printf("factorial is %d",fact(5));
+    return 0;
+}
+int fact(int n){
+    if(n == 1){
+        return 1;
+    }
+    int fact1 = fact(n - 1);
+    int fact2 = fact1 * n;
+    return fact2;
+}
+
+------------------------------------------------------------------------
+
+SUM PRODUCT AND AVERAGE OF 2 NUMBERS
+
+#include <stdio.h>
+
+void doWork(int a, int b, int *sum,int *prod,int *avg);
+
+int main() {
+    int a = 3;
+    int b = 5;
+    int sum, prod, avg;
+    doWork(a, b, &sum,&prod,&avg);
+    
+    printf("Sum = %d\nprod = %d\navg = %d\n",sum, prod, avg);
+    return 0;
+}
+
+void doWork(int a, int b, int *sum, int *prod, int *avg) {
+    *sum = a+b;
+    *prod = a * b;
+    *avg = (a+b)/2;
+}
+
+------------------------------------------------------------------------
+
+ARRAY S
+
+#include <stdio.h>
+
+int main() {
+    float price[3];
+    printf("Enter price 1:");
+    scanf("%f",&price[0]);
+    
+    printf("Enter price 2:");
+    scanf("%f",&price[1]);
+    
+    printf("Enter price 3:");
+    scanf("%f",&price[2]);
+    
+    printf("total price 1:%f\n", price[0]+(0.18*price[0]));
+    printf("total price 2:%f\n", price[1]+(0.18*price[1]));
+    printf("total price 3:%f\n", price[2]+(0.18*price[2]));
+    return 0;
+}
+
+------------------------------------------------------------------------
+
+FIBONACCHI SWQUENCE USING ITERATION
+
+#include <stdio.h>
+
+int main() {
+    
+    int n;
+    printf("Enter number:");
+    scanf("%d",&n);
+    
+    int fib[n];
+    fib[0]=0;
+    fib[1]=1;
+    
+    for(int i = 2; i < n ; i++){
+        fib[i] = fib[i - 1] + fib[i - 2]; //Very important
+        printf("%d \t",fib[i]);
+    }
+
+    return 0;
+}
+
+------------------------------------------------------------------------
+
+PRING STRING USING CHAR
+
+#include <stdio.h>
+
+void printstring(char arr[]);
+
+int main() {
+    
+    char firstname[] = "yash";
+    char lastname[] = "khandelwal";
+    
+    printstring(firstname);
+    printstring(lastname)
+    
+    return 0;
+}
+
+void printstring(char arr[]){
+    for(int i=0; arr[i] != '\0'; i++){
+        printf("%c",arr[i]);
+    }
+    printf("\n");
+}
+
+------------------------------------------------------------------------
+
+COUNT LENGHT OF STRING
+
+#include <stdio.h>
+
+int Countname(char arr[]);
+
+int main(){
+    
+    char name[100];
+    fgets(name,100,stdin);
+    printf("lenght is: %d",Countname(name));
+    return 0;
+}
+int Countname(char arr[]){
+    int count = 0;
+    for(int i = 0; arr[i] != '\0'; i++){
+        count++;
+    }
+    return count - 1;
+}
+
+------------------------------------------------------------------------
+
+STRUCTRE
+
+#include <stdio.h>
+#include <string.h>
+
+struct student {
+        int roll;
+        float cgpa;
+        char name[100];
+    };
+
+int main() {
+    
+    struct student s1;
+    s1.roll = 01;
+    s1.cgpa = 9.8;
+    strcpy(s1.name,"yash");
+    printf("Student name = %s\n",s1.name);
+    printf("Student roll call = %d\n",s1.roll);
+    printf("student cgpa = %f\n",s1.cgpa);
+    printf("\n\n");
+    
+    struct student s2;
+    s2.roll = 02;
+    s2.cgpa = 9.8;
+    strcpy(s2.name,"Keshvi");
+    printf("Student name = %s\n",s2.name);
+    printf("Student roll call = %d\n",s2.roll);
+    printf("student cgpa = %f\n",s2.cgpa);
+    printf("\n\n");
+    
+    struct student s3;
+    s3.roll = 03;
+    s3.cgpa = 8.9;
+    strcpy(s3.name,"yo");
+    printf("Student name = %s\n",s3.name);
+    printf("Student roll call = %d\n",s3.roll);
+    printf("Student cgpa = %f\n",s3.cgpa);
+
+    return 0;
+}
+
+------------------------------------------------------------------------
+
+POINTER STRUCTURE
+
+#include <stdio.h>
+#include <string.h>
+
+struct student {
+        int roll;
+        float cgpa;
+        char name[100];
+    };
+
+int main() {
+    
+    struct student s1 = {01, 9.8, "yash"};
+    printf("Student name =  %s\n",s1.name);
+    
+    struct student *ptr = &s1;
+    printf("%d\n", (*ptr).roll);
+    
+    
+
+    return 0;
+}
+
+------------------------------------------------------------------------
+
+ADDRSS PRINTING USING STRUCTURE
+
+#include <stdio.h>
+#include <string.h>
+
+struct address {
+    int houseno;
+    int block;
+    char city[100];
+    char state[100];
+};
+
+void printaddress(struct address add);
+
+int main(){
+    struct address add[5];
+    
+    printf("Enter info for person 1:");
+    scanf("%d",&add[0].houseno);
+    scanf("%d",&add[0].block);
+    scanf("%s",&add[0].city);
+    scanf("%s",&add[0].state);
+    
+    printf("Enter info for person 2:");
+    scanf("%d",&add[1].houseno);
+    scanf("%d",&add[1].block);
+    scanf("%s",&add[1].city);
+    scanf("%s",&add[1].state);
+    
+    printf("Enter info for person 3:");
+    scanf("%d",&add[2].houseno);
+    scanf("%d",&add[2].block);
+    scanf("%s",&add[2].city);
+    scanf("%s",&add[2].state);
+    
+    printf("Enter info for person 4:");
+    scanf("%d",&add[3].houseno);
+    scanf("%d",&add[3].block);
+    scanf("%s",&add[3].city);
+    scanf("%s",&add[3].state);
+    
+    printf("Enter info for person 5:");
+    scanf("%d",&add[4].houseno);
+    scanf("%d",&add[4].block);
+    scanf("%s",&add[4].city);
+    scanf("%s",&add[4].state);
+    
+    printaddress(add[0]);
+    printaddress(add[1]);
+    printaddress(add[2]);
+    printaddress(add[3]);
+    printaddress(add[4]);
+    return 0;
+}
+
+void printaddress(struct address add){
+    printf("Address is: %d,%d,%s,%s\n\n",add.houseno,add.block,add.city,add.state);
+}
+
+
+------------------------------------------------------------------------
+
+SUM OF SQUARE OF N NUMBERS
+
+#include <stdio.h>
+int main()
+{
+    int a,b,fac=0;
+    printf("Enter a number:");
+    scanf("%d",&a);
+    for(int i = 1;i<=a;i++){
+        b = i*i;
+        fac += b;
+    }
+    printf("%d",fac);
+    return 0;
+}
+
+------------------------------------------------------------------------
+
+PODUCT OF NUMBER UPTO N
+
+#include <stdio.h>
+int main()
+{
+    int a,sum=1;
+    printf("Enter a number:");
+    scanf("%d",&a);
+    for(int i = 1;i<=a;i++){
+        sum *= i;
+    }
+    printf("%d",sum);
+    return 0;
+}

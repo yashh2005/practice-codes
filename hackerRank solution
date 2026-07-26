@@ -31,3 +31,30 @@ int main() {
     }
     return 0;
 }
+
+triplet array comparision funtion solution
+vector<int> compareTriplets(vector<int> a, vector<int> b) {
+    int alice, bob;
+    alice = 0;
+    bob = 0;
+    
+    for(int i=0;i<3;i++){
+        if(a[i] > b[i]){
+            alice++;
+        }
+        else if(a[i] < b[i]){
+            bob++;
+        }
+    }
+    return {alice,bob};
+}
+
+Sum of elements of array
+int simpleArraySum(vector<int> ar) {
+    int total;
+    total = 0;
+    for(int i = 0;i<ar.size();i++){
+        total += ar[i];
+    }
+    return total;
+}

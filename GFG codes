@@ -168,3 +168,15 @@ int main() {
 
     return 0;
 }
+
+learning to be precise
+class Solution {
+  public:
+    void precise(float a, float b) {
+        // code here
+        float c;
+        c = a/b;
+        cout << fixed << setprecision(3) << c << endl;
+    }
+};
+

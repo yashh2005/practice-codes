@@ -196,3 +196,31 @@ int main() {
 
     return 0;
 }
+
+the else statement
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a;
+    cin >> a;
+
+    // code here
+    if(a > 100){
+        cout << "Big";
+    }
+    else{
+        cout << "Small";
+    }
+
+    return 0;
+}
+
+find given element
+class Solution {
+	public:
+	int findElementAtIndex(int i, vector<int> &arr) {
+		// code here
+		return arr[i];
+	}
+};

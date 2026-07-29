@@ -224,3 +224,19 @@ class Solution {
 		return arr[i];
 	}
 };
+
+
+Typecaste and double it
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string num;
+    getline(cin, num);
+    // TypeCast to int double it and print
+    int c = stoi(num);
+    cout << c*2;
+
+    return 0;
+}

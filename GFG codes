@@ -258,3 +258,22 @@ class Solution {
 		}
 	}
 };
+
+vovel or not
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    char ch;
+    cin >> ch;
+    ch = tolower(ch);
+    // code here
+    if(ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u'){
+        cout << "true";
+    }
+    else{
+        cout << "false";
+    }
+
+    return 0;
+}

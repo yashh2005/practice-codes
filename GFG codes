@@ -287,7 +287,7 @@ class Solution {
         while(i < arr.size()){
             if(arr[i] == x)
                 return i;
-            int jump = abs(arr[i] - x / k);
+            int jump = abs(arr[i] - x) / k;
             i += max(1,jump);
         }
         return -1;

@@ -277,3 +277,19 @@ int main() {
 
     return 0;
 }
+
+Search in a K step array
+class Solution {
+  public:
+    int findStepKeyIndex(vector<int>& arr, int k, int x) {
+        // code here
+        int i = 0;
+        while(i < arr.size()){
+            if(arr[i] == x)
+                return i;
+            int jump = abs(arr[i] - x / k);
+            i += max(1,jump);
+        }
+        return -1;
+    }
+};

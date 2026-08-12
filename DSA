@@ -176,4 +176,32 @@ int main(){
     return 0;
 }
 ---------------------------------------------------------------------------------------------
+Say digits out loud
 
+#include <iostream> 
+using namespace std;
+
+void saydig(int n, string arr[]){
+    if(n == 0){
+        return;
+    }
+    // Processing
+    int digit = n%10;
+    n = n/10;
+    // Recursive call
+    saydig(n,arr);
+
+    cout << arr[digit] << " ";
+
+}
+
+int main(){
+    string arr[10] = {"zero","one","two","three","four","five","six","seven","eight","nine"};
+    int n;
+    cin >> n;
+
+    saydig(n,arr);
+
+    return 0;
+} 
+-------------------------------------------------------------------------------------------------------------------------------

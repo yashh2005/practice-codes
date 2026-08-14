@@ -236,3 +236,25 @@ int main(){
     return 0;
 }
 ------------------------------------------------------------------------------------------------------------------------------------
+Reverse a string using recursion
+#include <iostream>
+using namespace std;
+
+void rev(string& name,int i, int j){
+    if(i>j)
+        return;
+    
+    swap(name[i],name[j]);
+    i++;
+    j--;
+    
+    rev(name,i,j);
+}
+
+int main(){
+    string name = "Hello";
+    rev(name , 0 , name.length()-1);
+    cout << name;
+
+    return 0;
+}

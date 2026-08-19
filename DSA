@@ -420,16 +420,20 @@ int parti(int arr[], int s, int e){
 
     int i = s,j = e;
     while(i < pivindex && j > pivindex){
-        while(arr[i] < pivot){
+        while(arr[i] <= pivot){
             i++;
         }
         while(arr[j] > pivot){
             j--;
         }
         if(i < pivindex && j > pivindex){
-            swap(arr[i++],arr[j-1]);
+            swap(arr[i],arr[j]);
+            i++;
+            j--;
         }
     }
+
+    return pivindex;
 }
 
 void qsort(int arr[], int s, int e){

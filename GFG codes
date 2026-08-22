@@ -346,3 +346,66 @@ class Solution {
         return a+b;
     }
 };
+--------------------------------------------------------------------------------------------------------------------
+Rat in s maze problem
+class Solution {
+  private:
+    bool ifsafe(int x, int y, int n, vector<vector<int>> &visited, vector<vector<int>> &m) {
+        return (x >= 0 && x < n && y >= 0 && y < n && visited[x][y] == 0 && m[x][y] == 1);
+    }
+
+    void solve(vector<vector<int>> &m, int n, vector<string> &ans, int x, int y, vector<vector<int>> visited, string path) {
+        // base case
+        if (x == n-1 && y == n-1) {
+            ans.push_back(path);
+            return;
+        }
+
+        visited[x][y] = 1;
+
+        // Down
+        if (ifsafe(x+1, y, n, visited, m)) {
+            path.push_back('D');
+            solve(m, n, ans, x+1, y, visited, path);
+            path.pop_back();
+        }
+
+        // Left
+        if (ifsafe(x, y-1, n, visited, m)) {
+            path.push_back('L');
+            solve(m, n, ans, x, y-1, visited, path);
+            path.pop_back();
+        }
+
+        // Right
+        if (ifsafe(x, y+1, n, visited, m)) {
+            path.push_back('R');
+            solve(m, n, ans, x, y+1, visited, path);
+            path.pop_back();
+        }
+
+        // Up
+        if (ifsafe(x-1, y, n, visited, m)) {
+            path.push_back('U');
+            solve(m, n, ans, x-1, y, visited, path);
+            path.pop_back();
+        }
+
+        visited[x][y] = 0; // backtrack
+    }
+
+  public:
+    vector<string> ratInMaze(vector<vector<int>>& m) {
+        vector<string> ans;
+        int n = m.size();
+
+        if (m[0][0] == 0) return ans;
+
+        vector<vector<int>> visited(n, vector<int>(n, 0));
+        string path = "";
+
+        solve(m, n, ans, 0, 0, visited, path);
+        sort(ans.begin(), ans.end());
+        return ans;
+    }
+};
